@@ -1,10 +1,3 @@
-// Server=tcp:[PUT ENDPOINT HERE];Initial Catalog=[PUT DB NAME HERE];Persist Security Info=False;User ID=[USERNAME HERE];Password=[PASSWORD HERE];MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;
-// "Server=tcp:restondbdemo220245.cvtq9j4axrge.us-east-1.rds.amazonaws.com;Initial Catalog=[Joshua Henry];Persist Security Info=False;User ID=[JH];Password=[blueaqua6];MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;"
-
-// dotnet add package Microsoft.Data.SqlClient --version 4.1.0
-// dotnet add package Microsoft.Extensions.Configuration --version 6.0.1
-// dotnet add package Microsoft.Extensions.Configuration.Json --version 6.0.0
-
 using Microsoft.Data.SqlClient;
 using shopModel;
 namespace shopDL
