@@ -19,6 +19,8 @@ namespace shopDL
 
         List<T> GetAll();
 
+        Task<List<T>> GetAllAsync();
+
         /// <summary>
         /// This will update an exiting resource
         /// </summary>

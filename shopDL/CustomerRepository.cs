@@ -27,6 +27,11 @@ namespace shopDL
             return listOfCustomer;
         }
 
+        public Task<List<Customer>> GetAllAsync()
+        {
+            throw new NotImplementedException();
+        }
+
         public void Update(Customer p_resource)
         {
             // show the current list of customers

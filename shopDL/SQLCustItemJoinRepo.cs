@@ -21,6 +21,11 @@ namespace shopDL
             throw new NotImplementedException();
         }
 
+        public Task<List<CustomerItemJoin>> GetAllAsync()
+        {
+            throw new NotImplementedException();
+        }
+
         public void Update(CustomerItemJoin p_resource)
         {
             string SQLquery = @"update Customer_Item

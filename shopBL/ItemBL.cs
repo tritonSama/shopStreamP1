@@ -30,6 +30,16 @@ namespace shopBL
             return _itemRepo.GetAll();
         }
 
+        public Item searchItemById(int p_itemID)
+        {
+           return _itemRepo.GetAll().First(item => item.itemID == p_itemID);
+        }
+
+        public Item searchItemById(string p_itemName)
+        {
+            throw new NotImplementedException();
+        }
+
         public Item searchItemByName(string p_itemName)
         {
             List<Item> currentListOfItem = _itemRepo.GetAll();

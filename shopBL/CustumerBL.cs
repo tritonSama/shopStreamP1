@@ -68,6 +68,11 @@ namespace shopBL
             }
             return null;
         }
+
+        public async Task<List<Customer>> GetAllCustomerAsync()
+        {
+            return await _custRepo.GetAllAsync();
+        }
     }
 }
 

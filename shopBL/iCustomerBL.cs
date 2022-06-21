@@ -9,6 +9,7 @@ namespace shopBL
         void AddItemToCustomer(Customer p_customer);
         object GiveItemToCustomer(Customer foundCustomer);
         List<Customer> GetAllCustomer();
+        Task<List<Customer>> GetAllCustomerAsync();
         Customer SearchCustomerByID(int p_id);
     }
 }

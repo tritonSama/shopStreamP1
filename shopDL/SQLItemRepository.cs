@@ -57,13 +57,18 @@ namespace shopDL
             }
         }
 
+        public Task<List<Item>> GetAllAsync()
+        {
+            throw new NotImplementedException();
+        }
+
         // private List<Item> GiveItemToCustomer(int p_custID)
         // {
         //     string SQLquery = @"select c.custName, i.itemName, ci.cartQuant, i.itemPrice, i.itemID from Customer c
         //         inner join Customer_Item ci on c.custID = ci.cust_ID
         //         inner join Item i on i.itemID = ci.itemID
         //         where c.custID = @custName";
-            
+
         //     List<Item> listOfItem = new List<Item>();
         //     using (SqlConnection con = new SqlConnection(_connectionString))
         //     {

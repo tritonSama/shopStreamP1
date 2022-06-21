@@ -36,11 +36,39 @@ namespace shopDL
             List<Customer> listOfCustomer = new List<Customer>();
             using (SqlConnection con = new SqlConnection(_connectionString))
             {
-                con.Open();
+                 con.Open();
                 SqlCommand command = new SqlCommand(SQLQuery, con);
 
-                SqlDataReader reader = command.ExecuteReader();
-                while(reader.Read())
+                SqlDataReader reader =  command.ExecuteReader();
+                while( reader.Read())
+                {
+                    listOfCustomer.Add(new Customer()
+                    {
+                        custID = reader.GetInt32(0),
+                        name = reader.GetString(1),
+                        email = reader.GetString(2),
+                        address = reader.GetString(3),
+                        phone = reader.GetString(4),
+                        price = reader.GetInt32(5)
+                        
+                    });
+
+                }
+                return listOfCustomer;
+            }
+        }
+
+        public async Task<List<Customer>> GetAllAsync()
+        {
+             string SQLQuery = @"select * from Customer";
+            List<Customer> listOfCustomer = new List<Customer>();
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+                await con.OpenAsync();
+                SqlCommand command = new SqlCommand(SQLQuery, con);
+
+                SqlDataReader reader =  await command.ExecuteReaderAsync();
+                while( await reader.ReadAsync())
                 {
                     listOfCustomer.Add(new Customer()
                     {
@@ -79,6 +107,11 @@ namespace shopDL
 
                 command.ExecuteNonQuery();
             }
+        }
+
+        List<Customer> iRepository<Customer>.GetAll()
+        {
+            throw new NotImplementedException();
         }
 
         private List<Item> GiveItemToCustomer(int p_custID)

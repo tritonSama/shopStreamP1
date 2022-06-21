@@ -16,6 +16,11 @@ namespace shopDL
             throw new NotImplementedException();
         }
 
+        public Task<List<Item>> GetAllAsync()
+        {
+            throw new NotImplementedException();
+        }
+
         // public List<Item> GetAll()
         // {
         //     string jsonString = File.ReadAllText(_filepath);

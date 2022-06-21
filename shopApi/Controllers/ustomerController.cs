@@ -19,12 +19,12 @@ public class CustomerController : ControllerBase
 
 
     [HttpGet("GetAllCustomer")]
-    public IActionResult GetAllCustomer()
+    public async Task<IActionResult> GetAllCustomer()
     {
         try
         {
-        List<Customer> listOfCurrentCustomer = _custBL.GetAllCustomer();
-        return Ok(listOfCurrentCustomer);
+            List<Customer> listOfCurrentCustomer = await _custBL.GetAllCustomerAsync();
+            return Ok(listOfCurrentCustomer);
         }
         catch (SqlException)
         {
